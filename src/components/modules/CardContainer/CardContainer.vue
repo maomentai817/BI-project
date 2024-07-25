@@ -1,0 +1,46 @@
+<script setup>
+defineProps({
+  title: {
+    type: String,
+    default: ''
+  }
+})
+</script>
+
+<template>
+  <el-card class="page-container">
+    <template #header v-if="title">
+      <div class="header f-b">
+        <b>{{ title }}</b>
+        <div class="extra f-s">
+          <slot name="extra"></slot>
+        </div>
+      </div>
+    </template>
+    <div class="content">
+      <slot></slot>
+    </div>
+  </el-card>
+</template>
+
+<style lang="scss" scoped>
+.page-container {
+  // min-height: 90%;
+  // height: 90%;
+  // margin-bottom: 20px;
+  box-sizing: border-box;
+  :deep(.el-card__header) {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  :deep(.el-card__body) {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    overflow: auto;
+  }
+  .content {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+}
+</style>
