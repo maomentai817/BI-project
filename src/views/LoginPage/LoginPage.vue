@@ -47,22 +47,24 @@ const onSubmit = () => {
 </script>
 
 <template>
-  <div class="scrollbar-none">
-    <header class="login-header">
+  <div>
+    <header class="login-header bgc-#fff bb-1-#e4e4e4">
       <div class="container m-t-20 f-b">
         <h1 class="logo w-200">
-          <RouterLink to="/">BI 项目</RouterLink>
+          <RouterLink to="/" class="w-full hl-132 block">BI 项目</RouterLink>
         </h1>
-        <RouterLink class="entry" to="/">
-          进入网站首页
-          <i class="iconfont icon-angle-right"></i>
-          <i class="iconfont icon-angle-right"></i>
-        </RouterLink>
+        <div class="to-home mr-30 h-132 f-items-c">
+          <RouterLink class="entry w-120 fs-16" to="/">
+            进入网站首页
+            <i class="iconfont icon-angle-right"></i>
+            <i class="iconfont icon-angle-right"></i>
+          </RouterLink>
+        </div>
       </div>
     </header>
-    <section class="login-section">
+    <section class="login-section relative">
       <div class="wrapper">
-        <nav class="f-items-c">
+        <nav class="f-items-c p-y-40">
           <a href="javascript:;">账户登录</a>
         </nav>
         <div class="account-box">
@@ -114,45 +116,26 @@ const onSubmit = () => {
 
 <style scoped lang="scss">
 .login-header {
-  background: #fff;
-  border-bottom: 1px solid #e4e4e4;
-
   .logo {
     a {
-      display: block;
-      height: 132px;
-      width: 100%;
-      line-height: 152px;
       text-align: center;
       color: #1890ff;
       // text-indent: -9999px;
     }
   }
-  .sub {
-    flex: 1;
-    font-size: 24px;
-    font-weight: normal;
-    margin-bottom: 38px;
-    margin-left: 20px;
-    color: #666;
-  }
-  .entry {
-    width: 120px;
-    margin-bottom: 38px;
-    font-size: 16px;
-    i {
-      font-size: 14px;
-      color: #a0cfff;
-      letter-spacing: -5px;
+  .to-home {
+    .entry {
+      i {
+        font-size: 14px;
+        color: #a0cfff;
+        letter-spacing: -5px;
+      }
     }
   }
 }
-
 .login-section {
   background: linear-gradient(135deg, #1890ff, #a0cfff);
   height: 488px;
-  position: relative;
-
   .wrapper {
     width: 380px;
     background: #fff;
@@ -161,13 +144,11 @@ const onSubmit = () => {
     top: 54px;
     transform: translate3d(100px, 0, 0);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-
     nav {
       font-size: 14px;
       height: 55px;
       margin-bottom: 20px;
       border-bottom: 1px solid #f5f5f5;
-      padding: 0 40px;
       text-align: right;
       a {
         flex: 1;

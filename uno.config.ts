@@ -23,7 +23,8 @@ export default defineConfig({
     'f-e': 'flex justify-end items-center',
     'text-overflow': 'truncate',
     'wh-full': 'w-full h-full',
-    'f-items-c': 'flex items-center'
+    'f-items-c': 'flex items-center',
+    'fd-col': 'flex flex-col'
   },
   rules: [
     [/^b-(\d+)$/, (match) => ({ 'border-width': `${match[1]}px` })],

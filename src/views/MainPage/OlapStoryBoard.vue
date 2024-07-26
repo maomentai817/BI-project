@@ -99,7 +99,7 @@ const handleDelete = (index, row) => {
         <el-button type="primary">新增故事板</el-button>
       </div>
     </div>
-    <div class="osb-content flex flex-col">
+    <div class="osb-content fd-col">
       <div class="osb-table h-80vh bg-red">
         <el-table
           :data="tableData"
