@@ -2,6 +2,7 @@
 import { ref, nextTick } from 'vue'
 import { parse } from 'papaparse'
 import { genFileId } from 'element-plus'
+import { uploadFileAPI } from '@/api/file'
 
 // 文件部分操作
 const uploadFile = ref(null)
@@ -73,7 +74,7 @@ const openDialog = () => {
   dialogFlag.value = true
 }
 
-const handleSubmit = () => {
+const handleSubmit = async () => {
   // 上传操作...
   if (!uploadFile.value) {
     ElMessage.error('请先选择文件')
@@ -83,6 +84,8 @@ const handleSubmit = () => {
   const formData = new FormData()
   formData.append('file', uploadFile.value.raw)
 
+  const res = await uploadFileAPI(formData)
+  console.log(res)
   // axios
   //   .post('你的上传接口地址', formData)
   //   .then((response) => {

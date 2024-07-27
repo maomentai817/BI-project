@@ -16,6 +16,8 @@ import { componentPlugin } from '@/components'
 // 引入懒加载指令
 import { lazyPlugin } from '@/directives'
 import 'virtual:uno.css'
+// 引入 map.gl
+import vue3BaiduMapGl from 'vue3-baidu-map-gl'
 
 const app = createApp(App)
 
@@ -29,5 +31,10 @@ app.use(ELementPlus, {
 app.use(componentPlugin)
 // 注册自定义插件
 app.use(lazyPlugin)
+// 挂载 map.gl
+app.use(vue3BaiduMapGl, {
+  ak: 'YUb9iTSfFwBJ4aH8NMRWNMHMrChaaarD',
+  plugins: ['TrackAnimation']
+})
 
 app.mount('#app')

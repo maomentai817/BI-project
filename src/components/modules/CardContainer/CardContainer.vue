@@ -17,7 +17,7 @@ defineProps({
         </div>
       </div>
     </template>
-    <div class="content">
+    <div class="content h-full fd-col">
       <slot></slot>
     </div>
   </el-card>
@@ -37,6 +37,7 @@ defineProps({
     padding-top: 12px;
     padding-bottom: 12px;
     overflow: auto;
+    height: 100%;
   }
   .content {
     max-height: 100%;

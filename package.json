@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
@@ -22,7 +22,8 @@
     "pinia-plugin-persistedstate": "^3.2.1",
     "unocss-preset-scrollbar-hide": "^1.0.1",
     "vue": "^3.4.31",
-    "vue-router": "^4.4.0"
+    "vue-router": "^4.4.0",
+    "vue3-baidu-map-gl": "^2.3.4"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.10.3",

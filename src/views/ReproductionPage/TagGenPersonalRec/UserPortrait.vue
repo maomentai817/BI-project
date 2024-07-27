@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="up-container flex flex-col h-full">
+  <div class="up-container fd-col h-full">
     <div class="up-breadcrumb">
       <bread-crumb
         title="标签生成与个性化推荐"

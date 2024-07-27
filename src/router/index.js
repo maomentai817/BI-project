@@ -86,6 +86,48 @@ const router = createRouter({
             import(
               '@/views/ReproductionPage/BusinessProcessManagement/LogMining.vue'
             )
+        },
+        {
+          path: 'reproduction/speed-prediction',
+          name: 'SpeedPrediction',
+          component: () =>
+            import('@/views/ReproductionPage/MapPage/SpeedPrediction.vue')
+        },
+        {
+          path: 'reproduction/ida-result',
+          name: 'IdaResult',
+          component: () =>
+            import('@/views/ReproductionPage/MapPage/IdaResult.vue')
+        },
+        {
+          path: 'reproduction/car-quality',
+          name: 'CarQuality',
+          component: () =>
+            import('@/views/ReproductionPage/MapPage/CarQuality.vue')
+        },
+        {
+          path: 'reproduction/bayonet-quality',
+          name: 'BayonetQuality',
+          component: () =>
+            import('@/views/ReproductionPage/MapPage/BayonetQuality.vue')
+        },
+        {
+          path: 'reproduction/taxi-monitoring',
+          name: 'TaxiMonitoring',
+          component: () =>
+            import('@/views/ReproductionPage/MapPage/TaxiMonitoring.vue')
+        },
+        {
+          path: 'reproduction/road-congestion',
+          name: 'RoadCongestion',
+          component: () =>
+            import('@/views/ReproductionPage/MapPage/RoadCongestion.vue')
+        },
+        {
+          path: 'reproduction/road-speed',
+          name: 'RoadSpeed',
+          component: () =>
+            import('@/views/ReproductionPage/MapPage/RoadSpeed.vue')
         }
       ]
     },

@@ -2,7 +2,8 @@
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "types": ["vue3-baidu-map-gl/volar"]
   },
   "exclude": ["node_modules", "dist"]
 }

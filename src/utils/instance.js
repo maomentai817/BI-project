@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
 
-const baseURL = 'xxx'
+const baseURL = 'http://192.168.124.111:9090/'
 
 const instance = axios.create({
   baseURL,
@@ -32,18 +32,22 @@ instance.interceptors.response.use(
     //   return Promise.reject(new Error(res.statusText))
     // }
     // TODO: 摘取核心响应数据
-    return res.data
+    // return res.data
+    return res
   },
   (err) => {
     ElMessage({
       type: 'warning',
-      message: err.response.data.message
+      // message: err.response.data.message
+      message: err.response
     })
     // TODO: 处理 401 错误 -- token 失效
-    if (err.response && err.response.status === 401) {
-      // TODO: 跳转登录页
-      // TODO: 清除token
-    }
+    // if (err.response && err.response.status === 401) {
+    //   // TODO: 跳转登录页
+    //   // TODO: 清除token
+    // }
     return Promise.reject(err)
   }
 )
+export default instance
+export { baseURL }

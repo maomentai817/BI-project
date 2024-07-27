@@ -44,6 +44,9 @@ importers:
       vue-router:
         specifier: ^4.4.0
         version: 4.4.0(vue@3.4.31)
+      vue3-baidu-map-gl:
+        specifier: ^2.3.4
+        version: 2.3.4(vue@3.4.31)
     devDependencies:
       '@rushstack/eslint-patch':
         specifier: ^1.10.3
@@ -1315,6 +1318,9 @@ packages:
     resolution: {integrity: sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow==}
     engines: {node: '>=16 || 14 >=14.17'}
 
+  mitt@3.0.1:
+    resolution: {integrity: sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==}
+
   mlly@1.7.1:
     resolution: {integrity: sha512-rrVRZRELyQzrIUAVMHxP97kv+G786pHmOKzuFII8zDYahFBS7qnHh2AlYSl1GAHhaMPCz6/oHjVMcfFYgFYHgA==}
 
@@ -1699,6 +1705,12 @@ packages:
     resolution: {integrity: sha512-HB+t2p611aIZraV2aPSRNXf0Z/oLZFrlygJm+sZbdJaW6lcFqEDQwnzUBXn+DApw+/QzDU/I9TeWx9izEjTmsA==}
     peerDependencies:
       vue: ^3.2.0
+
+  vue3-baidu-map-gl@2.3.4:
+    resolution: {integrity: sha512-SUQK5XxjNCI+VNtrTCP/8mtk/jY8O9HO6DC1X9WoCb/fxt+HqjPIqEFYr8J55MArrrlGjeGEJ9C4rV739FiwAw==}
+    engines: {node: '>=12.0.0', pnpm: '>=8.0.0'}
+    peerDependencies:
+      vue: ^3.0.0
 
   vue@3.4.31:
     resolution: {integrity: sha512-njqRrOy7W3YLAlVqSKpBebtZpDVg21FPoaq1I7f/+qqBThK9ChAIjkRWgeP6Eat+8C+iia4P3OYqpATP21BCoQ==}
@@ -3058,6 +3070,8 @@ snapshots:
     dependencies:
       brace-expansion: 2.0.1
 
+  mitt@3.0.1: {}
+
   mlly@1.7.1:
     dependencies:
       acorn: 8.12.1
@@ -3436,6 +3450,11 @@ snapshots:
   vue-router@4.4.0(vue@3.4.31):
     dependencies:
       '@vue/devtools-api': 6.6.3
+      vue: 3.4.31
+
+  vue3-baidu-map-gl@2.3.4(vue@3.4.31):
+    dependencies:
+      mitt: 3.0.1
       vue: 3.4.31
 
   vue@3.4.31:

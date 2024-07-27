@@ -26,6 +26,16 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  server: {
+    proxy: {
+      // 将所有以 /api 开头的请求代理到后端服务器
+      '/api': {
+        target: 'http://192.168.124.111:9090', // 后端服务器的地址
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '') // 将 /api 前缀替换为空
+      }
+    }
   }
   // css: {
   //   preprocessorOptions: {
