@@ -13,6 +13,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
     "@unocss/preset-rem-to-px": "^0.61.5",
+    "@unocss/reset": "^0.61.6",
     "@vueuse/core": "^10.11.0",
     "axios": "^1.7.2",
     "dayjs": "^1.11.11",
@@ -23,7 +24,8 @@
     "unocss-preset-scrollbar-hide": "^1.0.1",
     "vue": "^3.4.31",
     "vue-router": "^4.4.0",
-    "vue3-baidu-map-gl": "^2.3.4"
+    "vue3-baidu-map-gl": "^2.3.4",
+    "vue3-puzzle-vcode": "^1.1.7"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.10.3",

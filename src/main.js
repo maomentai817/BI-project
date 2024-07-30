@@ -15,7 +15,10 @@ import '@/styles/common.scss'
 import { componentPlugin } from '@/components'
 // 引入懒加载指令
 import { lazyPlugin } from '@/directives'
+// 引入 daisyui 和 unocss
 import 'virtual:uno.css'
+// import 'daisyui/dist/full.css'
+
 // 引入 map.gl
 import vue3BaiduMapGl from 'vue3-baidu-map-gl'
 

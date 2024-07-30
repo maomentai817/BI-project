@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-// import { loginAPI } from '@/api/user.js'
+import { loginAPI } from '@/api/user.js'
 
 export const useUserStore = defineStore(
   'temp',
@@ -8,7 +8,10 @@ export const useUserStore = defineStore(
     // state
     const userInfo = ref({})
     // actions
-    const getUserInfo = () => {}
+    const getUserInfo = async ({ account, password }) => {
+      const res = await loginAPI({ account, password })
+      console.log(res)
+    }
 
     const clearUserInfo = () => {
       userInfo.value = {}

@@ -1,8 +1,9 @@
 <script setup>
 import { ref, nextTick } from 'vue'
 import { parse } from 'papaparse'
-import { genFileId } from 'element-plus'
+import { ElMessage, genFileId } from 'element-plus'
 import { uploadFileAPI } from '@/api/file'
+// import instance from '@/utils/instance'
 
 // 文件部分操作
 const uploadFile = ref(null)
@@ -85,24 +86,19 @@ const handleSubmit = async () => {
   formData.append('file', uploadFile.value.raw)
 
   const res = await uploadFileAPI(formData)
-  console.log(res)
-  // axios
-  //   .post('你的上传接口地址', formData)
-  //   .then((response) => {
-  //     ElMessage.success('上传文件成功')
-  //     console.log('上传成功:', response.data)
-  //     dialogFlag.value = false
-  //   })
-  //   .catch((error) => {
-  //     ElMessage.error('上传文件失败')
-  //     console.error('上传失败:', error)
-  //   })
+  if (res.status === 200) {
+    ElMessage.success('上传文件成功')
+    dialogFlag.value = false
+  } else {
+    ElMessage.error('上传文件失败')
+    console.log(res.message)
+  }
 }
 </script>
 
 <template>
   <div
-    class="tg-container flex flex-col h-full"
+    class="tg-container fd-col h-full"
     v-loading="loading"
     element-loading-background="transparent"
     :element-loading-spinner="svg"
@@ -156,24 +152,7 @@ const handleSubmit = async () => {
         <p>1</p>
         <p>1</p>
         <p>1</p>
-        <p>1</p>
-        <p>1</p>
-        <p>1</p>
-        <p>1</p>
-        <p>1</p>
-        <p>1</p>
-        <p>1</p>
-        <p>1</p>
-        <p>1</p>
-        <p>1</p>
-        <p>1</p>
-        <p>1</p>
-        <p>1</p>
-        <p>1</p>
-        <p>1</p>
-        <p>1</p>
-        <p>1</p>
-        <p>1000</p>
+        <p>10000</p>
       </card-container>
     </div>
     <div class="dialog-container">

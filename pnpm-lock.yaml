@@ -14,6 +14,9 @@ importers:
       '@unocss/preset-rem-to-px':
         specifier: ^0.61.5
         version: 0.61.5
+      '@unocss/reset':
+        specifier: ^0.61.6
+        version: 0.61.6
       '@vueuse/core':
         specifier: ^10.11.0
         version: 10.11.0(vue@3.4.31)
@@ -47,6 +50,9 @@ importers:
       vue3-baidu-map-gl:
         specifier: ^2.3.4
         version: 2.3.4(vue@3.4.31)
+      vue3-puzzle-vcode:
+        specifier: ^1.1.7
+        version: 1.1.7
     devDependencies:
       '@rushstack/eslint-patch':
         specifier: ^1.10.3
@@ -684,6 +690,9 @@ packages:
 
   '@unocss/reset@0.61.5':
     resolution: {integrity: sha512-5FKNsHnke9J1Z0T4prOZn9hkWh86c6Px+Oh3xf8mDd6dDw8CjzYMRxZEKti0gt13NcsO29G1vLGM7UjG1sCamg==}
+
+  '@unocss/reset@0.61.6':
+    resolution: {integrity: sha512-fAlE2EbG5h6yS6oIBDOKw4VHogLcl/Ao9EbrcNe1uRc79cA1rvSkqeMAxLHvGxwXAzu7LIovknR+pzASeVLZBg==}
 
   '@unocss/rule-utils@0.56.5':
     resolution: {integrity: sha512-CXIGHCIC9B8WUl9KbbFMSZHcsIgfmI/+X0bjBv6xrgBVC1EQ2Acq4PYnJIbaRGBRAhl9wYjNL7Zq2UWOdowHAw==}
@@ -1712,6 +1721,9 @@ packages:
     peerDependencies:
       vue: ^3.0.0
 
+  vue3-puzzle-vcode@1.1.7:
+    resolution: {integrity: sha512-mW780dz7HKjrElnE60CeYSeHGidKBKHoMjTDYfqF21330rTkFOsfDK1FQKZ22MktgMtTEoS/imfpEDlM1cxY/g==}
+
   vue@3.4.31:
     resolution: {integrity: sha512-njqRrOy7W3YLAlVqSKpBebtZpDVg21FPoaq1I7f/+qqBThK9ChAIjkRWgeP6Eat+8C+iia4P3OYqpATP21BCoQ==}
     peerDependencies:
@@ -2357,6 +2369,8 @@ snapshots:
       '@unocss/rule-utils': 0.61.5
 
   '@unocss/reset@0.61.5': {}
+
+  '@unocss/reset@0.61.6': {}
 
   '@unocss/rule-utils@0.56.5':
     dependencies:
@@ -3456,6 +3470,8 @@ snapshots:
     dependencies:
       mitt: 3.0.1
       vue: 3.4.31
+
+  vue3-puzzle-vcode@1.1.7: {}
 
   vue@3.4.31:
     dependencies:

@@ -1,7 +1,10 @@
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
+import { useUserStore } from '@/stores'
+import router from '@/router'
 
 const baseURL = 'http://192.168.124.111:9090/'
+// const baseURL = 'http://127.0.0.1:4523/m1/4869779-4525618-default/'
 
 const instance = axios.create({
   baseURL,
@@ -13,9 +16,11 @@ instance.interceptors.request.use(
   (config) => {
     // 请求前操作
     // TODO: 添加token / 设置请求头
-    // if (token) {
-    //   config.headers.Authorization = `Bearer ${token}`
-    // }
+    const userStore = useUserStore()
+    const token = userStore.userInfo.token
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`
+    }
     return config
   },
   (err) => {
@@ -28,24 +33,25 @@ instance.interceptors.request.use(
 instance.interceptors.response.use(
   (res) => {
     // TODO: 业务处理失败操作
-    // if (res.status !== 200) {
-    //   return Promise.reject(new Error(res.statusText))
-    // }
+    if (res.status !== 200) {
+      return Promise.reject(new Error(res.statusText))
+    }
     // TODO: 摘取核心响应数据
-    // return res.data
-    return res
+    return res.data
   },
   (err) => {
     ElMessage({
       type: 'warning',
-      // message: err.response.data.message
-      message: err.response
+      message: err.response.data.message || '服务异常'
     })
     // TODO: 处理 401 错误 -- token 失效
-    // if (err.response && err.response.status === 401) {
-    //   // TODO: 跳转登录页
-    //   // TODO: 清除token
-    // }
+    if (err.response && err.response.status === 401) {
+      // TODO: 跳转登录页
+      // TODO: 清除token
+      const userStore = useUserStore()
+      userStore.clearUserInfo()
+      router.push('/login')
+    }
     return Promise.reject(err)
   }
 )
