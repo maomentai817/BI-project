@@ -1,12 +1,12 @@
 <script setup>
 import { ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
-// import { useUserStore } from '@/stores'
-
-// const userStore = useUserStore()
+import { useUserStore } from '@/stores'
 import Vcode from 'vue3-puzzle-vcode'
 import imgs from './composables/getRandomImgs'
+import { registerAPI } from '@/api/user'
 
+const userStore = useUserStore()
 const form = ref({
   account: '',
   password: '',
@@ -84,12 +84,16 @@ const onSuccessLogin = () => {
 const onSubmit = async () => {
   if (isVerified.value) {
     loginFormRef.value.validate(async (valid) => {
-      // const { account, password } = form.value
+      const { account, password } = form.value
       if (valid) {
         // 登录操作
-        // await userStore.getUserInfo({ account, password })
-        ElMessage.success('登录成功')
-        router.replace('/')
+        const res = await userStore.getUserInfo({ account, password })
+        if (res.status === 1) {
+          ElMessage.success('登录成功')
+          router.replace('/')
+        } else {
+          ElMessage.error(res.message)
+        }
       }
     })
   } else {
@@ -102,12 +106,16 @@ const onSubmit = async () => {
 const onRegister = async () => {
   if (isVerified.value) {
     signFormRef.value.validate(async (valid) => {
-      // const { account, password } = form.value
+      const { account, password } = form.value
       if (valid) {
         // 注册操作
-        // await userStore.getUserInfo({ account, password })
-        ElMessage.success('注册成功')
-        handleToggle()
+        const res = await registerAPI({ account, password })
+        if (res.status === 1) {
+          ElMessage.success('注册成功')
+          handleToggle()
+        } else {
+          ElMessage.error(res.message)
+        }
       }
     })
   } else {

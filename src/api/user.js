@@ -6,8 +6,19 @@ import instance from '@/utils/instance.js'
  */
 export const loginAPI = ({ account, password }) => {
   return instance({
-    url: '/auth/user/login',
+    url: '/signIn',
     method: 'post',
-    params: { account, password }
+    params: { username: account, password: password }
+  })
+}
+/**
+ * @description 注册
+ * @param {Object} obj
+ */
+export const registerAPI = ({ account, password }) => {
+  return instance({
+    url: '/signUp',
+    method: 'post',
+    params: { username: account, password: password }
   })
 }

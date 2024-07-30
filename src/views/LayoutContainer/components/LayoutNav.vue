@@ -5,10 +5,10 @@ import { useRouter } from 'vue-router'
 
 const userStore = useUserStore()
 
-userStore.userInfo = {
-  account: '猫闷台817',
-  token: '123456'
-}
+// userStore.userInfo = {
+//   account: '猫闷台817',
+//   token: '123456'
+// }
 
 const router = useRouter()
 const onLogout = () => {
@@ -29,7 +29,7 @@ const onLogin = () => {
       </div>
     </div>
     <div class="right f-items-c">
-      <div class="right-content f-b" v-if="userStore.userInfo.token">
+      <div class="right-content f-b" v-if="userStore.userInfo">
         <div class="user-info f-items-c">
           <div class="user-avatar">
             <el-avatar
@@ -37,7 +37,7 @@ const onLogin = () => {
               :src="userStore.userInfo.avatar || defaultAvatar"
             />
           </div>
-          <div class="user-account">{{ userStore.userInfo.account }}</div>
+          <div class="user-account">{{ userStore.userInfo.username }}</div>
         </div>
         <div class="exit">
           <el-popconfirm
